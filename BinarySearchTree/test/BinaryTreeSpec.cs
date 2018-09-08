@@ -105,5 +105,25 @@ namespace Tests
                 new List<int> { 1, 3 }
             );
         }
+
+        [Test]
+        public void Should_remove_nonleaf_node(){
+            var tree = new BinaryTree<int>();
+            var node1 = new BinaryTreeNode<int>(8);
+            var node2 = new BinaryTreeNode<int>(5);
+            var node3 = new BinaryTreeNode<int>(10);
+            var node4 = new BinaryTreeNode<int>(2);
+            tree.Add(node1);
+            tree.Add(node2);
+            tree.Add(node3);
+            tree.Add(node4);
+            
+            tree.Remove(5);
+
+            Assert.AreEqual(
+                tree.InOrderTraversal<int>(x => x),
+                new List<int> { 2, 8, 10 }
+            );
+        }
     }
 }

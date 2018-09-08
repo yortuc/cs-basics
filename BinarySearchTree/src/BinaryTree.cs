@@ -97,6 +97,8 @@ namespace BinarySearchTree
 
         /// <summary>
         /// Removes given value from tree
+        /// 1. The node to be removed  has no right child
+        ///     move the left child of node in place of node removed
         /// </summary>
         /// <returns>true if value found and removed, 
         /// false if value is not exist </returns>
@@ -104,22 +106,7 @@ namespace BinarySearchTree
             // if its head
             if(_head.Value.CompareTo(value) == 0) {
                 _head = null;
-            }
-
-            // leaves
-            TryRemoveChild(_head, value);
-        }
-
-        private void TryRemoveChild(BinaryTreeNode<T> node, T value){
-            if(node.Left != null) {
-                if(node.Left.Value.CompareTo(value) == 0) node.Left = null;
-            }
-            else if(node.Right != null) {
-                if(node.Right.Value.CompareTo(value) == 0) node.Right = null;
-            }
-            else{
-                if(node.Left != null) TryRemoveChild(node.Left, value);
-                if(node.Right != null) TryRemoveChild(node.Right, value);
+                return;
             }
         }
     }
