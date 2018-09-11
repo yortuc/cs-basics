@@ -95,6 +95,30 @@ namespace BinarySearchTree
                     CheckNodeValues(node.Right, value);
         }
 
+        public BinaryTreeNode<T> FindWithParent(T value, out BinaryTreeNode<T> parent){
+            BinaryTreeNode<T> curNode = _head;
+            parent = null;
+
+            while(curNode != null) {
+                int compare = value.CompareTo(curNode.Value);
+
+                if(compare == 0) {
+                    // this is the node we are looking for
+                    break;
+                }
+                else if(compare < 0) {
+                    // value we are looking for is lower than this val, go left
+                    parent = curNode;
+                    curNode = curNode.Left;
+                }
+                else if(compare > 0){
+                    parent = curNode;
+                    curNode = curNode.Right;
+                }
+            }
+            return curNode;
+        }
+
         /// <summary>
         /// Removes given value from tree
         /// 1. The node to be removed  has no right child
@@ -107,6 +131,30 @@ namespace BinarySearchTree
             if(_head.Value.CompareTo(value) == 0) {
                 _head = null;
                 return;
+            }
+
+            // find the node we want to remove
+            BinaryTreeNode<T> node, parent;
+            node = FindWithParent(value, out parent);
+
+            // 1. node has no child, just remove
+            if(node.Left == null && node.Right == null){
+                if(parent.Left == node){
+                    parent.Left = null;
+                }
+                else{
+                    parent.Right = null;
+                }
+            }
+            // 2. node has right child, 
+            // swap node to be removed and right child
+            else if(node.Left == null && node.Right != null) {
+                if(parent.Left == node){ 
+                    parent.Left = null;
+                }
+                else{
+                    parent.Right = null;
+                }
             }
         }
     }

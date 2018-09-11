@@ -75,6 +75,22 @@ namespace Tests
         }
 
         [Test]
+        public void Shoul_find_node_with_parent(){
+            var tree = new BinaryTree<int>();
+            var node1 = new BinaryTreeNode<int>(3);
+            var node2 = new BinaryTreeNode<int>(1);
+            var node3 = new BinaryTreeNode<int>(4);
+            tree.Add(node1);
+            tree.Add(node2);
+            tree.Add(node3);
+
+            BinaryTreeNode<int> parent;
+            var node = tree.FindWithParent(1, out parent);
+
+            Assert.AreEqual(parent, node1);
+        }
+
+        [Test]
         public void Shoul_remove_root_node(){
             var tree = new BinaryTree<int>();
             var node1 = new BinaryTreeNode<int>(3);
@@ -125,5 +141,5 @@ namespace Tests
                 new List<int> { 2, 8, 10 }
             );
         }
-    }
+     }
 }
