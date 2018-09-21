@@ -1,10 +1,10 @@
-how database indexes work
+how does a database index work?
 
 solid principles, L, square - rectangle inheritance violates L principle?
 
 how async in c# works under the hood?
 
-what to do in case of hash collision
+what to do in case of hash collision?
 
 how does geo hashing work?
 

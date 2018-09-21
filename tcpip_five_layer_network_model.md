@@ -4,7 +4,7 @@
 
 
 ## 1. Physical Layer
-Represent physical devices that interconnects computers. Includes specifications for networking cables and connectors that join devices together. Also defines how signals are sent over these connections. Sends and receives signals on the phsical wire or antenna to transmit bits.
+Represents physical devices that interconnects computers. Includes specifications for networking cables and connectors that join devices together. Also defines how signals are sent over these connections. Sends and receives signals on the physical wire or antenna to transmit bits.
 
 ## 2. Data Link Layer
 Also called as `Network interface` or `Network access layer`. It is responsible for defining a common way of interpreting the signals sent by physical layer so network devices can communicate. Although lots of protocols available, the most common is `Ethernet` (Although wireless technologies becoming more and more popular). 
@@ -12,11 +12,11 @@ Also called as `Network interface` or `Network access layer`. It is responsible 
 Data bits are encoded, decoded and organized in the data link layer, before they are transported as frames between two adjacent nodes on the same `lan` or `wan`.
 
 ## 3. Network Layer
-Also called as `Internet Layer`. Allows different networks to communicate with each other through devices known as `router`s. A collection of networks connected together through routers, the most famous of these being the `Internet`.
+Also called as `Internet Layer`. Allows different networks to communicate with each other through devices known as `router`. A collection of networks connected together through routers, the most famous of these being the `Internet`.
 
 Data link layer is reponsible for transferring data across a single link, network layer's responsibility is to get the data delivered across a collection of networks.
 
-Between browser and server, network layer help to communicate. The most widely used protocol for network layer is calld `IP` or `Internet protocol`.
+Between browser and server, network layer helps to communicate. The most widely used protocol for network layer is called `IP` or `Internet protocol`.
 
 ## 4. Transport Layer
 A single node on the network can run multiple client applications like mail client and web browser. Also a node can run multiple server applications like mail server and web server. 
